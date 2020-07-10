@@ -125,7 +125,7 @@ legend.onAdd = function (map) {
    var labels = ['Moderate', 'High'];
     div.innerHTML='<div><b>NASA Landslide Nowcast</b></div';
  for(var i=0; i <categories.length; i++){
-                    div.innerHTML+='<i style="background:'+getColor(categories[i])+'''>&nbsp;</i>&nbsp;&nbsp;'
+                    div.innerHTML+='<i style="background:'+getColor(categories[i])+'''>&nbsp;&nbsp;</i>&nbsp;&nbsp;'
                     +labels[i]+'<br/>';
                 }        div.innerHTML = labels.join('<br>');
     return div;
