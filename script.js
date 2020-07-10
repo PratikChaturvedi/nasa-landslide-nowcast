@@ -122,13 +122,13 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
     grades = ["moderate", "high"]
-    labels = ['<strong> Landslide Nowcast </strong>'],
-    from, to;
+    labels = ['<strong> Landslide Nowcast </strong>'];
  for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" height='50' width='50'>") +'<br>';
+            grades[i] + ('<i style="background:' + getColor(labels[i] + 1) + '"></i> ' +" height='50' width='50'>") +'<br>';
     }
-      return div;
+      div.innerHTML = labels.join('<br>');
+    return div;
 };
 legend.addTo(map);
 
