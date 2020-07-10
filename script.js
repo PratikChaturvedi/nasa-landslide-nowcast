@@ -47,8 +47,8 @@ controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 9th July 2020');
 
 // FOR MAGMA COLOUR SCHEME
 function getColor(d) {
-  return d == 2  ? '#fc3407' :
-         d == 1  ? '#ffcdb4' :
+  return d === 2  ? '#fc3407' :
+         d === 1  ? '#ffcdb4' :
                    '#000000';
 }
 
@@ -121,13 +121,17 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    grades = ["moderate", "high"]
+    categories = ["moderate", "high"]
     labels = ['<strong> Landslide Nowcast </strong>'];
- for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            grades[i] + ('<i style="background:' + getColor(grades[i]) + '"></i>');
-    }
-      div.innerHTML = labels.join('<br>');
+ for (var i = 0; i < categories.length; i++) {
+
+            div.innerHTML += 
+            labels.push(
+                '<i class="circle" style="background:' + getColor(categories[i]) + '"></i> ' +
+            (categories[i] ? categories[i] : '+'));
+
+        }
+        div.innerHTML = labels.join('<br>');
     return div;
 };
 legend.addTo(map);
