@@ -56,7 +56,7 @@ function getColor(d) {
 // Edit the getColor property to match data column header in your GeoJson file
 function style(feature) {
   return {
-    fillColor: getColor(feature.nowcast),
+    fillColor: getColor(feature.properties.nowcast),
     weight: 0.8,
     opacity: 1,
     color: 'white',
