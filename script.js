@@ -65,23 +65,23 @@ function style(feature) {
 }
 
 
-// This highlights the layer on hover, also for mobile
-function highlightFeature(e) {
-  resetHighlight(e);
-  var layer = e.target;
-  layer.setStyle({
-    weight: 4,
-    color: 'white',
-    fillOpacity: 0
-  });
-  info.update(layer.feature.properties);
-}
+// // This highlights the layer on hover, also for mobile
+// function highlightFeature(e) {
+//   resetHighlight(e);
+//   var layer = e.target;
+//   layer.setStyle({
+//     weight: 4,
+//     color: 'white',
+//     fillOpacity: 0
+//   });
+//   info.update(layer.feature.properties);
+// }
 
-// This resets the highlight after hover moves away
-function resetHighlight(e) {
-  geoJsonLayer.setStyle(style);
-  info.update();
-}
+// // This resets the highlight after hover moves away
+// function resetHighlight(e) {
+//   geoJsonLayer.setStyle(style);
+//   info.update();
+// }
 
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
@@ -121,7 +121,7 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    categories = ["moderate", "high"]
+    categories = ["moderate", "high"],
     labels = ['<strong> Landslide Nowcast </strong>'];
  for (var i = 0; i < categories.length; i++) {
 
