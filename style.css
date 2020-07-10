@@ -16,7 +16,7 @@ body { margin:0; padding:0; }
   text-align: left;
   line-height: 18px;
   color: #000000;
-  background: 'white';
+  background: white;
 }
 .legend i {
   width: 17px;
