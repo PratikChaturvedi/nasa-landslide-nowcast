@@ -121,18 +121,13 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    categories = [1, 2],
-    labels = ['Moderate', 'High'];
+    var categories = [1, 2],
+   var labels = ['Moderate', 'High'],
     div.innerHTML='<div><b>NASA Landslide Nowcast</b></div';
- for (var i = 0; i < categories.length; i++) {
-
-            div.innerHTML += 
-            labels.push(
-                '<i style="background:' + getColor(categories[i]) + '"></i> ' +
-            (categories[i] ? categories[i] : '+'));
-
-        }
-        div.innerHTML = labels.join('<br>');
+ for(var i=0; i <categories.length; i++){
+                    div.innerHTML+='<i style="background:'+getColor(categories[i])+'''>&nbsp;</i>&nbsp;&nbsp;'
+                    +labels[i]+'<br/>';
+                }        div.innerHTML = labels.join('<br>');
     return div;
 };
 legend.addTo(map);
