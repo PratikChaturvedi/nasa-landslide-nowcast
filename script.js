@@ -132,7 +132,7 @@ legend.onAdd = function (map) {
  
   for(var i=0; i < categories.length; i++){
                     div.innerHTML+='<i style="background:'
-                   + getColor(categories[i]) + ' ''>&nbsp;&nbsp;</i>&nbsp;nbsp;'
+                   + getColor(categories[i]) + '">&nbsp;&nbsp;</i>&nbsp;&nbsp;'
                    + labels[i] + '<br/>';
                 }
     return div;
