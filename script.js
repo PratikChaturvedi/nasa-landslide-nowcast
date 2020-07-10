@@ -125,7 +125,7 @@ legend.onAdd = function (map) {
     labels = ['<strong> Landslide Nowcast </strong>'];
  for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + ('<i style="background:' + getColor(labels[i]) + '"></i>') +'<br>';
+            grades[i] + ('<i style="background:' + getColor(grades[i]) + '"></i>');
     }
       div.innerHTML = labels.join('<br>');
     return div;
