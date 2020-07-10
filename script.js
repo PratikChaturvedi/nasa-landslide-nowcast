@@ -119,9 +119,10 @@ info.addTo(map);
 // Edit grades in legend to match the ranges cutoffs inserted above
 // In this example, the last grade will appear as 50+
 var legend = L.control({position: 'bottomright'});
+
 legend.onAdd = function (map) {
   
-  var div = L.DomUtil.create('div', 'info legend');
+  var div = L.DomUtil.create('div', 'legend');
  
   var categories = [1, 2];
  
@@ -129,9 +130,9 @@ legend.onAdd = function (map) {
  
   div.innerHTML='<div><b>NASA Landslide Nowcast</b></div';
  
-  for(var i=0; i <categories.length; i++){
+  for(var i=0; i < categories.length; i++){
                     div.innerHTML+='<i style="background:'
-                   + getColor(categories[i]) + '''>&nbsp;&nbsp;</i>&nbsp;&nbsp;'
+                   + getColor(categories[i]) + ' ''>&nbsp;&nbsp;</i>&nbsp;&nbsp;'
                    + labels[i] + '<br/>';
                 }
     return div;
