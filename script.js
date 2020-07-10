@@ -1,7 +1,7 @@
 // Edit the center point and zoom level
 var map = L.map('map', {
   center: [28,95],
-  zoom: 7,
+  zoom: 8,
   minZoom : 5,
   scrollWheelZoom: true
 });
@@ -41,14 +41,14 @@ $.getJSON("global_landslide_nowcast_20200709.geojson", function (data) {
  geoJsonLayer = L.geoJson(data, {
     style: style
       }).addTo(map);
-controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast');
+controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 9th July 2020');
 
 });
 
 // FOR MAGMA COLOUR SCHEME
 function getColor(d) {
-  return d = 2  ? '#fc3407' :
-         d = 1  ? '#ffcdb4' :
+  return d == 2  ? '#fc3407' :
+         d == 1  ? '#ffcdb4' :
                    '#000000';
 }
 
