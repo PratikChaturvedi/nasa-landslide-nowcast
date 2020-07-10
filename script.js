@@ -1,8 +1,8 @@
 // Edit the center point and zoom level
 var map = L.map('map', {
   center: [28,95],
-  zoom: 5,
-  minZoom : 3,
+  zoom: 7,
+  minZoom : 5,
   scrollWheelZoom: true
 });
 
@@ -109,7 +109,7 @@ info.onAdd = function (map) {
 // Edit info box text and variables (such as elderly density 2014) to match those in your GeoJSON data
 info.update = function (props) {
   this._div.innerHTML = '<h4>Circle Name <h4>' +  (props ?
-    '<b>' + props.circle + ' ' + props.district + '</b><br />' 
+    '<b>' + props.circle + ' ' + '</b><br /><b>' + props.district + '</b><br />' 
     : 'Click on a Cirlce');
 };  
 
@@ -121,8 +121,8 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    lower = [1,2],
-    upper = [1,2],
+    lower = ["moderate", " "],
+    upper = ["high"," "],
     labels = ['<strong> Landslide Nowcast </strong>'],
     from, to;
   for (var i = 0; i < lower.length; i++) {
