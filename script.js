@@ -122,7 +122,8 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
     categories = [1, 2],
-    labels = ['<strong> Landslide Nowcast </strong>'];
+    labels = ['Moderate', 'High'];
+    div.innerHTML='<div><b>NASA Landslide Nowcast</b></div';
  for (var i = 0; i < categories.length; i++) {
 
             div.innerHTML += 
