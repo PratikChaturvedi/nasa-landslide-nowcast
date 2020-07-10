@@ -29,7 +29,7 @@ new L.esri.basemapLayer('ImageryLabels').addTo(map);
 
 $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
   geoJsonLayer = L.geoJson(data, {
-    style: {color: '#42ff3f', weight:1, fillOpacity: 1},
+    style: {color: '#42ff3f', weight:1, fillOpacity: 0},
         onEachFeature: onEachFeature
   }).addTo(map);
   controlLayers.addOverlay(geoJsonLayer, 'Circles');
@@ -71,7 +71,7 @@ function highlightFeature(e) {
   var layer = e.target;
   layer.setStyle({
     weight: 4,
-    color: 'red',
+    color: 'white',
     fillOpacity: 0
   });
   info.update(layer.feature.properties);
@@ -121,17 +121,14 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    lower = ["moderate", " "],
-    upper = ["high"," "],
+    grades = ["moderate", "high"]
     labels = ['<strong> Landslide Nowcast </strong>'],
     from, to;
-  for (var i = 0; i < lower.length; i++) {
-        labels.push(
-            '<i style="background:' + getColor(lower[i] + 1) + '"></i> ' +
-            lower[i] + '&ndash;' + upper[i]);
-   }
-    div.innerHTML = labels.join('<br>');
-    return div;
+ for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            grades[i] + (" <img src="+ labels[i] +" height='50' width='50'>") +'<br>';
+    }
+      return div;
 };
 legend.addTo(map);
 
