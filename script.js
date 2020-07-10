@@ -1,8 +1,8 @@
 // Edit the center point and zoom level
 var map = L.map('map', {
   center: [28,95],
-  zoom: 11  ,
-  minZoom : 11,
+  zoom: 5,
+  minZoom : 3,
   scrollWheelZoom: true
 });
 
@@ -29,9 +29,10 @@ new L.esri.basemapLayer('ImageryLabels').addTo(map);
 
 $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
   geoJsonLayer = L.geoJson(data, {
-    style: {color: '#42ff3f', weight:1, fillOpacity: 0},
+    style: {color: '#42ff3f', weight:1, fillOpacity: 1},
         onEachFeature: onEachFeature
   }).addTo(map);
+  controlLayers.addOverlay(geoJsonLayer, 'Circles');
 });
 
 
@@ -120,8 +121,8 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    lower = [1],
-    upper = [2],
+    lower = [1,2],
+    upper = [1,2],
     labels = ['<strong> Landslide Nowcast </strong>'],
     from, to;
   for (var i = 0; i < lower.length; i++) {
