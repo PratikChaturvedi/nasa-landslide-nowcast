@@ -70,8 +70,8 @@ function highlightFeature(e) {
   resetHighlight(e);
   var layer = e.target;
   layer.setStyle({
-    weight: 1,
-    color: 'white',
+    weight: 2,
+    color: '#42ff3f',
     fillOpacity: 0
   });
   info.update(layer.feature.properties);
@@ -110,7 +110,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
   this._div.innerHTML = '<h4>Circle Name <h4>' +  (props ?
     '<b>' + props.circle + ' ' + '</b><br /><b>' + props.district + '</b><br />' 
-    : 'Click on a Cirlce');
+    : 'Click on a Circle');
 };  
 
 
@@ -121,7 +121,7 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    categories = ["Moderate", "High"],
+    categories = [1, 2],
     labels = ['<strong> Landslide Nowcast </strong>'];
  for (var i = 0; i < categories.length; i++) {
 
