@@ -49,7 +49,7 @@ controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast');
 function getColor(d) {
   return d = 2  ? '#fc3407' :
          d = 1  ? '#ffcdb4' :
-                   '#fd0000';
+                   '#000000';
 }
 
 
@@ -125,7 +125,7 @@ legend.onAdd = function (map) {
     labels = ['<strong> Landslide Nowcast </strong>'];
  for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + ('<i style="background:' + getColor(labels[i] + 1) + '"></i> ' +" height='50' width='50'>") +'<br>';
+            grades[i] + ('<i style="background:' + getColor(labels[i]) + '"></i>') +'<br>';
     }
       div.innerHTML = labels.join('<br>');
     return div;
