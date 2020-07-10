@@ -37,11 +37,11 @@ $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
 
 
 // Edit to upload GeoJSON data file from your local directory
-$.getJSON("global_landslide_nowcast_20200709.geojson", function (data) {
+$.getJSON("global_landslide_nowcast_3h_20200710-1330-ist.geojson", function (data) {
  geoJsonLayer = L.geoJson(data, {
     style: style
       }).addTo(map);
-controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 9th July 2020');
+controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 1330 hrs IST 10th July 2020');
 
 });
 
