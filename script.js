@@ -37,7 +37,7 @@ $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
 
 
 // Edit to upload GeoJSON data file from your local directory
-$.getJSON("global_landslide_nowcast_3h_20200710-2000-ist.geojson", function (data) {
+$.getJSON("global_landslide_nowcast_3h_20200710-0200-ist.geojson", function (data) {
  geoJsonLayer = L.geoJson(data, {
     style: style
       }).addTo(map);
