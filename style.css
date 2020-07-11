@@ -17,6 +17,11 @@ body { margin:0; padding:0; }
   line-height: 18px;
   color: #000000;
   background: white;
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
 .legend i {
   width: 17px;

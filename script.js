@@ -37,10 +37,10 @@ $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
 
 $.getJSON("arunachal-pradesh-districts.geojson", function (data) {
   geoJsonLayer = L.geoJson(data, {
-    style: {color: '#000000', weight:1, fillOpacity: 0},
+    style: {color: '#f4f007', weight:1, fillOpacity: 0},
         onEachFeature: onEachFeature
   }).addTo(map);
-  controlLayers.addOverlay(geoJsonLayer, 'Circles');
+  controlLayers.addOverlay(geoJsonLayer, 'Districts');
 });
 
 // Edit to upload GeoJSON data file from your local directory
