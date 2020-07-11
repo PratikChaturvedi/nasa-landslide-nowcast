@@ -35,22 +35,22 @@ $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
   controlLayers.addOverlay(geoJsonLayer, 'Circles');
 });
 
-$.getJSON("arunachal-pradesh-districts.geojson", function (data) {
-  geoJsonLayer = L.geoJson(data, {
-    style: {color: '#f4f007', weight:1, fillOpacity: 0},
-        onEachFeature: onEachFeature
-  }).addTo(map);
-  controlLayers.addOverlay(geoJsonLayer, 'Districts');
-});
+// $.getJSON("arunachal-pradesh-districts.geojson", function (data) {
+//   geoJsonLayer = L.geoJson(data, {
+//     style: {color: '#f4f007', weight:1, fillOpacity: 0},
+//         onEachFeature: onEachFeature
+//   }).addTo(map);
+//   controlLayers.addOverlay(geoJsonLayer, 'Districts');
+// });
 
 // Edit to upload GeoJSON data file from your local directory
-$.getJSON("global_landslide_nowcast_3h_20200711-0200-ist.geojson", function (data) {
- geoJsonLayer = L.geoJson(data, {
-    style: style
-      }).addTo(map);
-controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 0200 hrs IST 11th July 2020');
+// $.getJSON("global_landslide_nowcast_3h_20200711-0200-ist.geojson", function (data) {
+//  geoJsonLayer = L.geoJson(data, {
+//     style: style
+//       }).addTo(map);
+// controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 0200 hrs IST 11th July 2020');
 
-});
+// });
 
 $.getJSON("global_landslide_nowcast_3h_20200711-0500-ist.geojson", function (data) {
  geoJsonLayer = L.geoJson(data, {
@@ -121,7 +121,7 @@ info.onAdd = function (map) {
   return this._div;
 };
 
-// Edit info box text and variables (such as elderly density 2014) to match those in your GeoJSON data
+// Edit info box text and variables to match those in your GeoJSON data
 info.update = function (props) {
   this._div.innerHTML = '<h4>Circle Name <h4>' +  (props ?
     '<b>' + props.circle + ' ' + '</b><br /><b>' + props.district + '</b><br />' 
