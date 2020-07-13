@@ -22,4 +22,3 @@ intersectit <- raster::intersect(landslide_cleaned, circles)
 landslide_circles <- as.data.frame(intersectit)
 
 table_landslide_circles <- landslide_circles %>% select(circle, district) %>% arrange(district) %>% distinct(circle, district)
-
