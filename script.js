@@ -52,7 +52,7 @@ $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
 
 // });
 
-$.getJSON("global_landslide_nowcast_3h.20200712.233000.geojson", function (data) {
+$.getJSON("global_landslide_nowcast_3hr.20200712.233000.geojson", function (data) {
  geoJsonLayer = L.geoJson(data, {
     style: style
       }).addTo(map);
