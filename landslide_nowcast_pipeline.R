@@ -38,7 +38,7 @@ names(aggregate_by_district) <- c("district", "circles")
 
 aggregate_by_district$text <- "district :"
 
-aggregate_by_district$intro <- paste(format(now(tzone="UTC"), "%d-%m-%Y"), "Landslide Nowcast at 1700 hrs IST is moderate/high for following circles of :")
+aggregate_by_district$intro <- paste(format(now(tzone="UTC"), "%d-%m-%Y"), "Landslide Nowcast at 0500 hrs IST is moderate/high for following circles of :")
 
 ## REAARANGE THE COLUMNS
 aggregate_by_district <- aggregate_by_district[,c(4, 1, 3, 2)]
