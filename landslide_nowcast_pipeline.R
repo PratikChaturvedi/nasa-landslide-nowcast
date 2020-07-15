@@ -46,4 +46,4 @@ aggregate_by_district <- aggregate_by_district[,c(4, 1, 3, 2)]
 ## UNITE ALL COLUMNS SUCH THAT EVERY ROW IS ONE TWEET
 tweets <- aggregate_by_district %>% unite("tweet", intro, district, text, circles, remove = T, sep = " ")
 
-write.csv("tweets", "arunachal_pradesh_landslide_nowcast_3hr.20200715.0500.csv")
+write.csv(tweets, "arunachal_pradesh_landslide_nowcast_3hr.20200715.0500.csv")
