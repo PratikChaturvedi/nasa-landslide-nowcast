@@ -44,11 +44,11 @@ $.getJSON("arunachal-pradesh-circles.geojson", function (data) {
 // });
 
 
-$.getJSON("global_landslide_nowcast_3hr.20200713.233000.geojson", function (data) {
+$.getJSON("global_landslide_nowcast_3hr.20200714.233000.geojson", function (data) {
  geoJsonLayer = L.geoJson(data, {
     style: style
       }).addTo(map);
-controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 0500 hrs IST 14th July 2020');
+controlLayers.addOverlay(geoJsonLayer, 'Landslide Nowcast 0500 hrs IST 15th July 2020');
 
 });
 
